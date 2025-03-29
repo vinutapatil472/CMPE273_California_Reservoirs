@@ -1,0 +1,46 @@
+import json
+import sqlite3
+import paho.mqtt.client as mqtt
+
+# Connect to (or create) the database
+conn = sqlite3.connect("reservoir.db")
+cursor = conn.cursor()
+
+# Create table (if not exists)
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS reservoir_data (
+    station_id TEXT,
+    date TEXT,
+    elevation REAL
+)
+""")
+conn.commit()
+
+# Callback when message is received
+def on_message(client, userdata, msg):
+    try:
+        payload = json.loads(msg.payload.decode())
+        station_id = payload["station_id"]
+        date = payload["date"]
+        elevation = float(payload["elevation"])
+
+        # Insert into DB
+        cursor.execute("INSERT INTO reservoir_data (station_id, date, elevation) VALUES (?, ?, ?)",
+                       (station_id, date, elevation))
+        conn.commit()
+
+        print(f"💾 Saved to DB from {station_id} | {date}: {elevation} ft")
+    except Exception as e:
+        print(f"[!] Error processing message: {e}")
+
+# MQTT setup
+broker_address = "localhost"
+client = mqtt.Client()
+client.on_message = on_message
+
+client.connect(broker_address, 1883, 60)
+client.subscribe("reservoir/+")
+print("📡 Listening and storing reservoir data into database...")
+
+client.loop_forever()
+
