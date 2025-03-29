@@ -5,6 +5,15 @@
 
 This project is a **real-time interactive dashboard** built using **Python**, **Streamlit**, and **Plotly**, designed to **visualize and monitor water elevation levels** across major **California reservoirs** over the past 5 years.
 
+## 👥 Team Members
+
+| Name                | SJSU ID     |
+|---------------------|-------------|
+| Abhinav Sriharsha   | 017514900   |
+| Vinuta Patil        | 018196035   |
+| Bhavika Sodagum     | 017506567   |
+| Ravi Teja Gattu     | 017503746   |
+
 ## 🔁 Real-Time MQTT Integration
 
 Each reservoir is treated as an individual **MQTT topic** (e.g., `reservoir/SHA`, `reservoir/ORO`, etc.).
@@ -31,6 +40,21 @@ Each reservoir is treated as an individual **MQTT topic** (e.g., `reservoir/SHA`
 - 🔄 **Real-Time Simulation** (Optional)
   - Simulated publisher & subscriber setup using MQTT (paho-mqtt)
   - Data stored in a local SQLite database
+    
+### Reservoirs Covered
+
+| Reservoir Name         | Code |
+|------------------------|------|
+| Shasta Lake            | SHA  |
+| Lake Oroville          | ORO  |
+| Clear Lake             | CLE  |
+| New Melones            | NML  |
+| San Luis Reservoir     | SNL  |
+| Don Pedro Reservoir    | DNP  |
+| Berryessa Lake         | BER  |
+| Folsom Lake            | FOL  |
+| New Bullards Bar       | BUL  |
+| Pine Flat Lake         | PNF  |
 
 
 
@@ -51,7 +75,23 @@ Each reservoir is treated as an individual **MQTT topic** (e.g., `reservoir/SHA`
 
 ## 🛠️ Setup Instructions
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/ca-reservoir-dashboard.git
-   cd ca-reservoir-dashboard
+**Step 1: Activate virtual environment**  
+```bash
+source venv/bin/activate
+```
+**Step 2: Start the publisher**  
+```bash
+python3 publisher.py
+```
+**Step 3: Start the subscriber**  
+```bash
+python3 subscriber.py
+```
+**Step 4: Run the Streamlit dashboard**  
+```bash
+streamlit run dashboard.py
+```
+**Step 5: Visit the dashboard in your browser**  
+```bash
+http://localhost:8501
+```
