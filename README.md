@@ -1,4 +1,4 @@
-# CMPE273_California_Reservoirs- Project Grout -07
+# CMPE273_California_Reservoirs- Project Group -07
 
 # 💧 California Reservoir Monitoring Dashboard
 
