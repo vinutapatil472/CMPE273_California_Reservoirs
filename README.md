@@ -14,6 +14,13 @@ This project is a **real-time interactive dashboard** built using **Python**, **
 | Bhavika Sodagum     | 017506567   |
 | Ravi Teja Gattu     | 017503746   |
 
+## 🎥 Demo Video
+
+Watch the full project walkthrough here:  
+[🔗 View Demo Video on Google Drive](https://drive.google.com/file/d/1xzQfT2-ltIKQJrpFfirOWyE7n6AoE39a/view?usp=sharing)
+
+
+
 ## 🔁 Real-Time MQTT Integration
 
 Each reservoir is treated as an individual **MQTT topic** (e.g., `reservoir/SHA`, `reservoir/ORO`, etc.).
