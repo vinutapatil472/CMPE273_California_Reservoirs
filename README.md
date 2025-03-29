@@ -95,3 +95,26 @@ streamlit run dashboard.py
 ```bash
 http://localhost:8501
 ```
+
+## 📊 Dashboard Preview
+
+<img src="https://github.com/vinutapatil472/CMPE273_California_Reservoirs/blob/main/assets/Screenshot%202025-03-28%20at%208.27.41%E2%80%AFPM.png" width="600"/>
+
+## Dropdown
+
+<img src="https://github.com/vinutapatil472/CMPE273_California_Reservoirs/blob/main/assets/Screenshot%202025-03-28%20at%208.28.04%E2%80%AFPM.png" width="600"/>
+
+
+### 🔍 Dashboard Features
+
+- **🔽 Dropdown Menu**: Select any one of the 10 California reservoirs.
+- **📅 Date Range Slider**: Choose a custom time window to explore trends.
+- **📈 Line Graph (Plotly)**: Visualizes water elevation over time interactively.
+- **📊 Metrics Panel**:
+  - Minimum and maximum elevation for the selected date range.
+  - Minimum and maximum elevation across full 5-year dataset.
+- **🗺️ California Reservoir Map**:
+  - Selected reservoir is highlighted in **red**.
+  - All other reservoirs shown in **grey**.
+  - Zoomable and hoverable for better spatial context.
+
